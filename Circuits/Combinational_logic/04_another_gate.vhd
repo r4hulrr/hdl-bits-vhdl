@@ -10,8 +10,6 @@ entity another_gate is
 end entity;
 
 architecture behavioural of another_gate is
-    signal sig_not_in2 : std_logic := '0';
 begin
-    sig_not_in2 <= not i_in2;
-    o_out   <= i_in and sig_not_in2;
+    o_out   <= i_in and (not i_in2);
 end behavioural;
