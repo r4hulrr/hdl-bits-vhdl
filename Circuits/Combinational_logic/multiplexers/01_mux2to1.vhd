@@ -10,12 +10,8 @@ end top;
 
 architecture behavioural of top is
 begin
-    case(i_sel) is
-        when '0' =>
-            o_out <= i_a;
-        when '1' =>
-            o_out <= i_b;
-        when others =>
-            o_out <= i_a;
-    end case;
+    with i_sel select
+        o_out <= i_a when '0',
+                i_b when '1',
+                i_a when others;
 end behavioural;
