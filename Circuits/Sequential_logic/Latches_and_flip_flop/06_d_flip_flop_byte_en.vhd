@@ -16,7 +16,7 @@ begin
         begin
                 if i_resetn = '1' then
                         o_q <= (others => '0');
-                elsif falling_edge(clk) then
+                elsif rising_edge(clk) then
                         case(i_byteena) is
                                 -- VHDL 2008 syntax
                                 when "00" => o_q <= o_q;
