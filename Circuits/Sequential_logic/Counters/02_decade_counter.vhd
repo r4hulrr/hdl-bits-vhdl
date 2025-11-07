@@ -22,6 +22,6 @@ begin
                         end if;
                 end if;
         end process;
-        sig_count_next <= sig_count_q + 1;
+        sig_count_next <= sig_count_q + 1 when sig_count_q != "1001" else "0000";
         o_q <= sig_count_q;
 end behavioural;
